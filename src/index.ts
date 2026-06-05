@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import { AppDataSource } from './config/database';
 import  userRoute from './routes/userRoute';
 import authRoute from './routes/authRoute';
+import categoryRoute from './routes/categoryRoute';
 
 dotenv.config()
 
@@ -13,6 +14,7 @@ const port = process.env.PORT || 4000;
 app.use(express.json())
 app.use('/users', userRoute)
 app.use('/auth', authRoute)
+app.use('/categories', categoryRoute)
 
 app.get('/', (req, res)=>{
     res.json({message: "Expense Tracker API is running"})
