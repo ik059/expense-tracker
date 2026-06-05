@@ -12,6 +12,9 @@ export class Transaction {
     @PrimaryGeneratedColumn("uuid")
     id!: string;
 
+    @Column()
+    title!: string;
+    
     @Column("decimal", { precision: 10, scale: 2})
     amount!: number;
 
